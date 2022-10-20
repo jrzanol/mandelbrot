@@ -1,30 +1,30 @@
-Mandelbrot com Python e C.
+<b>Mandelbrot com Python e C.</b>
 
-Modo de Uso:
- Utilizar o comando make para a compilação da DLL e executar o arquivo Python.
+<b>Modo de Uso:</b><br>
+Utilizar o comando make para a compilação da DLL e executar o arquivo Python.
 
-Arquivos:
-mandelbrot.c:
+<b>Arquivos:</b><br>
+<b>mandelbrot.c:</b><br>
  Arquivo fonte em C que será compilado em uma DLL para ser chamado pelo
 código do Python. O Código é do calculo da fractal de Mandelbrot.
 
-graph.py:
+<b>graph.py:</b><br>
  Arquivo fonte em Python que chama a DLL em C do cálculo da fractal de Mandelbrot e
 gera a imagem colorida.
 
-Makefile:
+<b>Makefile:</b><br>
  Arquivo para compilar a DLL e executar o arquivo em Python para gerar a imagem.
 
-Testes realizados com:
-gcc (MinGW.org GCC-6.3.0-1) 6.3.0
-Python 3.10.8 (32-bits)
-MSYS 1.0
-Windows 10
+<b>Testes realizados com:</b><br>
+gcc (MinGW.org GCC-6.3.0-1) 6.3.0<br>
+Python 3.10.8 (32-bits)<br>
+MSYS 1.0<br>
+Windows 10<br>
 
-Pacotes do Python usados:
-pip install numpy
+<b>Pacotes do Python usados:</b><br>
+pip install numpy<br>
 pip install Pillow
 
-Linha de comando para executar:
-gcc -shared -o mandelbrot.dll mandelbrot.c
+<b>Linha de comando para executar:</b><br>
+gcc -shared -o mandelbrot.dll mandelbrot.c<br>
 python graph.py
