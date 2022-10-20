@@ -1,24 +1,24 @@
 from ctypes import *
-import numpy
-
-import numpy as np
 from PIL import Image
 
 # Carrega a DLL feita em C.
 mandelbrotDll = CDLL("./mandelbrot.dll")
 
-# Tamanho.
+# Tamanho da imagem.
 width = mandelbrotDll.getwidth()
 height = mandelbrotDll.getheight()
 
-img = Image.new('RGB', (width, height), "black") # Create a new black image
-graph = img.load() # Create the pixel map
+# Cria uma imagem para ser usada como base para criar o grafico da fractal de mandelbrot.
+img = Image.new('RGB', (width, height), "black")
+graph = img.load()
 
 for i in range(height):
     for j in range(width):
+        # Chama a funcao da DLL para calcular o valor na posicao.
         value = mandelbrotDll.mandelbrot(i, j)
-        color = (0, 0, 0)
         
+        # Define a cor utilizada dependendo do valor retornado.
+        color = (0, 0, 0)
         if (value == 100):
             color = (0, 0, 0)
         elif (value > 90):
@@ -46,6 +46,8 @@ for i in range(height):
         else:
             color = (200,0,200)
             
+        # Coloca na imagem a cor definida.
         graph[j,i] = color
 
+# Exibe a imagem.
 img.show()
